@@ -99,8 +99,7 @@ func (board *QueensBoard) modifyAttacks(space Coordinate, incrementBy int) {
         board.Coords[y][space.X] += incrementBy
     }
 
-    y := space.Y+1
-    for x:=space.X+1; x < board.Size.X; x++ {
+    for y,x:=space.Y+1,space.X+1; x < board.Size.X; x++ {
         if (y >= board.Size.Y) {
             break
         }
@@ -108,8 +107,7 @@ func (board *QueensBoard) modifyAttacks(space Coordinate, incrementBy int) {
         y++
     }
 
-    y = space.Y-1
-    for x:=space.X+1; x < board.Size.X; x++ {
+    for y,x:=space.Y-1,space.X+1; x < board.Size.X; x++ {
         if (y < 0) {
             break
         }
@@ -117,8 +115,7 @@ func (board *QueensBoard) modifyAttacks(space Coordinate, incrementBy int) {
         y--
     }
 
-    y = space.Y+1
-    for x:=space.X-1; x >= 0; x-- {
+    for y,x:=space.Y+1,space.X-1; x >= 0; x-- {
         if (y >= board.Size.Y) {
             break
         }
@@ -126,8 +123,7 @@ func (board *QueensBoard) modifyAttacks(space Coordinate, incrementBy int) {
         y++
     }
 
-    y = space.Y-1
-    for x:=space.X-1; x >= 0; x-- {
+    for y,x:=space.Y-1,space.X-1; x >= 0; x-- {
         if (y < 0) {
             break
         }
